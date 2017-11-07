@@ -27,6 +27,7 @@ $statement->closeCursor();
 <html>
 <head>
 	<title>Accounts</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
 <main>
