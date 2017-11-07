@@ -7,19 +7,20 @@ $pw = 'diehard53';
 
 try {
 	$db =new PDO($dsn, $username, $pw);
-	echo 'Connected Successfully';
+	echo 'Connected Successfully</br>';
 } catch (PDOException $e) {
 	echo 'Connection failed: ' . $e->getMessage() . '</br>';
 
 }
 
 // Get all accounts where id < 6
-
 $query = 'SELECT * FROM accounts WHERE id < 6';
 $statement = $db->prepare($query);
 $statement->execute();
 $accounts = $statement->fetchAll();
 $statement->closeCursor();
+$num_of_accounts = $statement->rowCount();
+echo "Number of records in result: $num_of_accounts";
 
 ?>
 
